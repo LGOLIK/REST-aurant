@@ -2,12 +2,15 @@
 
 Project 4 for General Assembly WDI. Ordering site for a restaurant, using Ruby on Rails
 
+---
 ## Technologies
 To be completed later
 
+---
 ## ERD
 ![](./pics/REST-aurant_ERD.png)
 
+---
 ## Wireframes
 ### Landing Page
 ![](./pics/Rails-CRUD-Wireframes.jpg)
@@ -21,6 +24,7 @@ To be completed later
 ### Chef view
 ![](./pics/Rails-CRUD-Wireframes4.jpg)
 
+---
 ## User Stories
 
 1. As a server I should be able to see all parties in restaurant
