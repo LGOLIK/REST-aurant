@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:current_user_id] = @user.id
-      # redirect_to artists_path
+      # redirect to root for now
+      # will need to the route of the employee type (will need conditional)
+      redirect_to root_path
     else
       redirect_to new_user_path
     end
