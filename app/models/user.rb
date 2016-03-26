@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
   validates :empl_type, inclusion: { in: ["Manager", "Server", "Chef"]}
-  has_secure_password
+  # has_secure_password
 end
