@@ -5,7 +5,8 @@
     <%= menu.name%>
     <%= menu.cuisine%>
     <%= menu.price%>
-    <%= link_to "Delete", menu_path(menu.id), method: :delete%>
+    <%= link_to "Edit", edit_menu_path(menu.id) %>
+    <%= link_to "Delete", menu_path(menu.id), method: :delete %>
   </li>
   <!-- <% end %> -->
 </div>
