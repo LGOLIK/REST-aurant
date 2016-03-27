@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160326192839) do
     t.boolean  "completed"
   end
 
-  create_table "partys", force: :cascade do |t|
+  create_table "parties", force: :cascade do |t|
     t.integer "table_num"
     t.integer "guests"
     t.boolean "payed"

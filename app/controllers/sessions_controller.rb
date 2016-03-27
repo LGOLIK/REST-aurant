@@ -3,11 +3,21 @@ class SessionsController < ApplicationController
     # find the email in the users db
     user = User.find_by(email: params[:email])
     # if the username and password match
-    if user && user.authenticate(params[:password])
+    if user && user.authenticate(params[:password]) && user.empl_type == "Manager"
       # create a session with the user
       session[:current_user_id] = user.id
-      # redirect to root path for now, but this will need to redirect to server, manager, or chef
-      redirect_to root_path
+      # redirect to the managers path
+      redirect_to managers_path
+    elsif user && user.authenticate(params[:password]) && user.empl_type == "Chef"
+      # create a session with the user
+      session[:current_user_id] = user.id
+      # redirect to the chefs path
+      redirect_to chefs_path
+    elsif user && user.authenticate(params[:password]) && user.empl_type == "Server"
+      # create a session with the user
+      session[:current_user_id] = user.id
+      # redirect to the servers path
+      redirect_to servers_path
     else
       # redirect to a splash_path, which does not currently exist
       redirect_to splash_path

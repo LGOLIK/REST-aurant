@@ -8,11 +8,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:current_user_id] = @user.id
-      # redirect to root for now
-      # will need to the route of the employee type (will need conditional)
-      redirect_to root_path
-    else
-      redirect_to new_user_path
+      # redirect to different routes depending on the user
+      if @user.empl_type == "Manager"
+        redirect_to managers_path
+      elsif @user.empl_type == "Server"
+        redirect_to servers_path
+      else
+        redirect_to chefs_path
+      end
     end
   end
 
