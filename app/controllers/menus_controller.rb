@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   before_action :authenticate
 
   def index
-    @artists = Artist.all
+    @menus = Menu.all
   end
 
   def new
@@ -10,7 +10,7 @@ class MenusController < ApplicationController
   end
 
   def create
-    @menu = Menu.new(menu_params)
+    @menu = Menu.create(menu_params)
     if @menu.save
       redirect_to menus_path
     else
@@ -18,11 +18,17 @@ class MenusController < ApplicationController
     end
   end
 
+  def destroy
+     @menu = Menu.find(params[:id])
+     @menu.destroy
+     redirect_to menus_path
+  end
+
 
   private
 
   def menu_params
-    params.require(:menus).permit(:name, :cuisine, :price)
+    params.require(:menu).permit(:name, :cuisine, :price)
   end
 
 end

@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   resources :servers, only: :index
   resources :managers, only: :index
 
-  resource :menus
-  resource :orders
-  resource :parties
+  resources :orders
+  resources :parties
+  resources :menus
+
 
   get 'sessions/new' => 'sessions#new'
   post 'sessions' => 'sessions#create'
