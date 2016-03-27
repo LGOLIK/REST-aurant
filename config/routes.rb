@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   root to: 'users#new'
   resources :users, only: [:new, :create, :show, :destroy]
 
-  resources :chefs
-  resources :servers
-  resources :managers
+  resources :chefs, only: :index
+  resources :servers, only: :index
+  resources :managers, only: :index
+
+  resource :menus
+  resource :orders
+  resource :parties
 
   get 'sessions/new' => 'sessions#new'
   post 'sessions' => 'sessions#create'
