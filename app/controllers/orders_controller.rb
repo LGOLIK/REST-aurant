@@ -2,7 +2,12 @@ class OrdersController < ApplicationController
   before_action :authenticate
 
   def index
-    @orders = Order.all
+    # only get orders for the logged in server
+    @orders = Order.find(session[:current_user_id])
+    # get all menu items
+    @menus = Menu.all
+    # get all parties
+    @parties = Party.all
   end
 
   def new

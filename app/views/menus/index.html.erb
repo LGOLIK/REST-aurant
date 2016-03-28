@@ -1,13 +1,7 @@
 <div class="menu">
   <h2>Here's the Menu</h2>
   <!-- <%= Menu.all.each do |menu| %> -->
-  <li>
-    <%= menu.name%>
-    <%= menu.cuisine%>
-    <%= menu.price%>
-    <%= link_to "Edit", edit_menu_path(menu.id) %>
-    <%= link_to "Delete", menu_path(menu.id), method: :delete %>
-  </li>
+<%= render partial: 'item', locals: {menu: menu}%>
   <!-- <% end %> -->
 </div>
   <%= link_to "Add a new menu item?", new_menu_path %>
