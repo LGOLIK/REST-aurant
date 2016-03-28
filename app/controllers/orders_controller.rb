@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def index
     # only get orders for the logged in server
-    @orders = Order.find(session[:current_user_id])
+    @orders = Order.all
     # get all menu items
     @menus = Menu.all
     # get all parties

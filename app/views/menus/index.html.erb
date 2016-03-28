@@ -1,7 +1,7 @@
 <div class="menu">
   <h2>Here's the Menu</h2>
   <!-- <%= Menu.all.each do |menu| %> -->
-<%= render partial: 'item', locals: {menu: menu}%>
+  <%= render partial: 'item', locals: {menu: menu, edit: true, order: false}%>
   <!-- <% end %> -->
 </div>
   <%= link_to "Add a new menu item?", new_menu_path %>

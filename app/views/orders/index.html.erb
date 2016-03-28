@@ -1,6 +1,12 @@
 <div class="orders">
   <h2>List of Orders</h2>
-  <li>
-  </li>
+  <% @parties.each do |party| %>
+    <div><%= party.table_num %></div>
+    <% party.menus.each do |menu| %>
+      <li><%= menu.name %></li>
+    <% end %>
+  <% end %>
+
+
 </div>
   <%= link_to "Add a new order?", new_order_path %>

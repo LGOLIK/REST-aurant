@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
- has_many :users
- has_many :menus
- has_many :parties
+ belongs_to :menu
+ belongs_to :party
+ belongs_to :user
 
 end
